@@ -12,7 +12,7 @@ function App() {
   const [selectedBusinessArea, setSelectedBusinessArea] = useState();
 
   useEffect(() => {
-    setRequests(data);
+    setRequests([]);
   }, []);
 
   function closeModal() {

@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 const NewRequestForm = ({ closeModal, requests, setRequests }) => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLasttName] = useState('')
+    const [jobTitle, setJobTitle] = useState('')
     const [lineManager, setLineManager] = useState('')
     const [startDate, setStartDate] = useState('')
     const [businessArea, setBusinessArea] = useState('')
@@ -14,6 +15,7 @@ const NewRequestForm = ({ closeModal, requests, setRequests }) => {
             id: uuidv4(),
             firstName,
             lastName,
+            jobTitle,
             lineManager,
             startDate,
             businessArea,
@@ -49,6 +51,17 @@ const NewRequestForm = ({ closeModal, requests, setRequests }) => {
                             placeholder="Doe" 
                             required />
                     </div>
+                </div>
+                <div className="mb-6 w-full">
+                    <label htmlFor="jobTitle" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job Title</label>
+                    <input 
+                        value={jobTitle}
+                        onChange={(e) => setJobTitle(e.target.value)}
+                        type="text" 
+                        id="jobTitle" 
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                        placeholder="Junior Web Developer" 
+                        required />
                 </div>
                 <div className='flex justify-start items-center gap-4'>
                     <div className="mb-6 w-full">

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RequestCard = ({id, businessArea, firstName, lastName, lineManager, startDate, completed, requests, setRequests}) => {
+const RequestCard = ({id, businessArea, firstName, lastName, jobTitle, lineManager, startDate, completed, requests, setRequests}) => {
     const handleDelete = (e) => {
         e.preventDefault()
         setRequests(reqs => { return reqs.filter(r => r.id !== id) })
@@ -19,10 +19,13 @@ const RequestCard = ({id, businessArea, firstName, lastName, lineManager, startD
             <span className={`bg-teal-100 mb-1 inline-flex text-teal-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300`}>
                 {businessArea}
             </span>
-            <h2 className="mt-2 mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+            <h2 className="mt-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
                 {firstName} {lastName}
             </h2>
-            <h3 className="mt-2 mb-2 text-sm font-normal tracking-tight text-gray-500 dark:text-white">
+            <h3 className="mb-4 text-md font-semibold tracking-tight text-pink-500 dark:text-white">
+                {jobTitle}
+            </h3>
+            <h3 className="mt-2 mb-2 text-xs font-normal tracking-tight text-gray-500 dark:text-white">
                 Manager {lineManager}
             </h3>
             <p className='mb-3 text-xs text-gray-500'>Start Date: {startDate}</p>
