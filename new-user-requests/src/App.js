@@ -101,10 +101,13 @@ function App() {
         ))}
       </div>
       
-      <div className='flex flex-row justify-center items-center gap-4 mt-10'>
-        {filteredList.map((element, index) => (
-          <RequestCard {...element} key={index} />
-        ))}
+      <div className='flex flex-row flex-wrap justify-center items-center gap-4 mt-10'>
+        {(filteredList.length > 0) ? filteredList.map((element, index) => (
+          <RequestCard {...element} key={index} requests={requests} setRequests={setRequests} />
+        )) :
+        (
+          <p className="text-sm text-slate-400">No Requests</p>
+        )}
       </div>
     </div>
   );
