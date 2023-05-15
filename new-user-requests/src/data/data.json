@@ -5,6 +5,24 @@
         "lastName": "Developer",
         "lineManager": "Richard Griffiths",
         "startDate": "2023-06-01",
+        "businessArea": "Finance",
+        "completed": false
+    },
+    {
+        "id": 2,
+        "firstName": "Rich",
+        "lastName": "Griffiths",
+        "lineManager": "Liam Moseley",
+        "startDate": "2023-06-01",
+        "businessArea": "IT",
+        "completed": false
+    },
+    {
+        "id": 3,
+        "firstName": "Rich",
+        "lastName": "Griffiths",
+        "lineManager": "Liam Moseley",
+        "startDate": "2023-06-01",
         "businessArea": "IT",
         "completed": false
     }
