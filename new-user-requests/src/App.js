@@ -12,7 +12,11 @@ function App() {
   const [selectedBusinessArea, setSelectedBusinessArea] = useState();
 
   useEffect(() => {
-    setRequests([]);
+    const storageRequests = localStorage.getItem('UserRequests')
+    if(!storageRequests)
+      return setRequests([])
+
+    return setRequests(JSON.parse(storageRequests))
   }, []);
 
   function closeModal() {

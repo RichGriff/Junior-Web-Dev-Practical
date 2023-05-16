@@ -3,15 +3,26 @@ import React from 'react'
 const RequestCard = ({id, businessArea, firstName, lastName, jobTitle, lineManager, startDate, completed, requests, setRequests}) => {
     const handleDelete = (e) => {
         e.preventDefault()
-        setRequests(reqs => { return reqs.filter(r => r.id !== id) })
+        const newRequests = requests.filter(r => r.id !== id)
+        setRequests(newRequests)
+        localStorage.setItem("UserRequests", JSON.stringify(newRequests));
     }
 
     const handleComplete = (e) => {
         e.preventDefault()
-        const newRequests = [...requests];
-        const item = newRequests.find(i => i.id === id);
-        item.completed = true;
-        setRequests(newRequests);
+
+        // Loop through requests and update item that matches
+        let updated = requests.map(item => {
+            if(item.id === id) {
+                item.completed = true
+            }
+            return item
+        })
+
+        // Update Requests with updated values and save to local storage
+        const updatedRequests = JSON.stringify(requests)
+        localStorage.setItem("UserRequests", updatedRequests);
+        setRequests(updated);
     }
 
     return (

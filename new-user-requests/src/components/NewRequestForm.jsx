@@ -21,6 +21,9 @@ const NewRequestForm = ({ closeModal, requests, setRequests }) => {
             businessArea,
             completed: false
         }
+        
+        const newRequests = JSON.stringify([...requests, newRequest])
+        localStorage.setItem("UserRequests", newRequests);
         setRequests([...requests, newRequest])
         closeModal()
     }
